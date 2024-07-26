@@ -1,21 +1,19 @@
 import './index.css';
 import Calendar from './calendar';
 import { useEffect, useRef } from 'react';
+import { Dayjs } from 'dayjs';
 interface CalendarRef {
-  setDate: (date: Date) => void
-  getDate: () => Date
+  setDate: (date: Dayjs) => void
+  getDate: () => Dayjs
 }
 function App() {
 
   const calendarRef = useRef<CalendarRef>(null)
   useEffect(() => {
-    console.log(calendarRef.current?.getDate().toLocaleDateString());
-    setTimeout(() => {
-      calendarRef.current?.setDate(new Date(2024, 3, 1));
-    }, 3000);
+    console.log(calendarRef.current?.getDate().format());
   }, []);
   return <div>
-    <Calendar ref={calendarRef} defaultValue={new Date()}></Calendar>
+    <Calendar ref={calendarRef} ></Calendar>
   </div>
 }
 
