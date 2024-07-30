@@ -10,16 +10,23 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@babel/standalone": "^7.25.2",
     "@monaco-editor/react": "^4.6.0",
+    "@typescript/ata": "^0.9.6",
     "ahooks": "^3.8.0",
+    "allotment": "^1.20.2",
     "classnames": "^2.5.1",
     "dayjs": "^1.11.12",
-    "allotment": "^1.20.2",
+    "lodash-es": "^4.17.21",
+    "monaco-editor": "^0.50.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "sass": "^1.77.8"
   },
   "devDependencies": {
+    "@babel/core": "^7.25.2",
+    "@types/babel__core": "^7.20.5",
+    "@types/babel__standalone": "^7.1.7",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@typescript-eslint/eslint-plugin": "^7.13.1",

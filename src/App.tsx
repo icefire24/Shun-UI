@@ -3,6 +3,7 @@ import Calendar from './calendar';
 import { useEffect, useRef } from 'react';
 import { Dayjs } from 'dayjs';
 import ReactPlayground from './Reactpalyground';
+import { PlaygroundContextProvider } from './Reactpalyground/PlaygroundContext';
 interface CalendarRef {
   setDate: (date: Dayjs) => void
   getDate: () => Dayjs
@@ -13,11 +14,11 @@ function App() {
   useEffect(() => {
     console.log(calendarRef.current?.getDate().format());
   }, []);
-  return <div>
+  return <PlaygroundContextProvider>
     <div style={{ width: '100%', height: '100%' }}>
       <ReactPlayground></ReactPlayground>
     </div>
-  </div>
+  </PlaygroundContextProvider>
 }
 
 export default App;
