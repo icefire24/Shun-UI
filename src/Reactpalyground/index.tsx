@@ -1,5 +1,6 @@
 import { Allotment } from "allotment";
 import 'allotment/dist/style.css';
+import './index.scss'
 import Header from "./components/Header";
 import CodeEditor from "./components/CodeEditor";
 import Preview from "./components/Preview";
