@@ -21,7 +21,6 @@ export default function Editor(props: Props) {
         onChange,
         options
     } = props;
-
     const handleEditorMount: OnMount = (editor, monaco) => {
 
         editor.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.KeyJ, () => {
@@ -55,7 +54,7 @@ export default function Editor(props: Props) {
         value={file.value}
         options={
             {
-                fontSize: 14,
+                fontSize: 20,
                 scrollBeyondLastLine: false,
                 minimap: {
                   enabled: false,

@@ -14,6 +14,8 @@ export interface Files {
 }
 
 export interface PlaygroundContext {
+    theme: 'light' | 'dark'
+    setTheme: (theme: 'light' | 'dark') => void
     files: Files
     selectedFileName: string
     setSelectedFileName: (fileName: string) => void
@@ -58,8 +60,11 @@ export const PlaygroundContextProvider = (props: PropsWithChildren) => {
             ...newFile,
         })
     }
+    const [theme, setTheme] = useState<'light' | 'dark'>('light')
     return (
         <PlaygroundContext.Provider value={{
+            theme,
+            setTheme,
             files,
             selectedFileName: selectedFilename,
             setSelectedFileName: setSelectedFilename,

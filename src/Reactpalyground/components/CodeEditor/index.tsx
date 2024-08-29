@@ -9,7 +9,7 @@ interface CodeEditorProps {
 
 const CodeEditor: FC<CodeEditorProps> = () => {
     const {
-        files, selectedFileName, setFiles
+        files, selectedFileName, setFiles,theme
     } = useContext(PlaygroundContext)
     const file = files[selectedFileName]
 
@@ -20,7 +20,9 @@ const CodeEditor: FC<CodeEditorProps> = () => {
     }
     return (<div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
         <FirstName></FirstName>
-        <Editor file={file} onChange={onEditorChange} />
+        <Editor file={file} onChange={onEditorChange} options={
+            {theme:`vs-${theme}`}
+        } />
     </div>);
 }
 

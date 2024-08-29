@@ -10,11 +10,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@ant-design/icons": "^5.4.0",
     "@babel/standalone": "^7.25.2",
     "@monaco-editor/react": "^4.6.0",
     "@typescript/ata": "^0.9.6",
     "ahooks": "^3.8.0",
     "allotment": "^1.20.2",
+    "antd": "^5.20.3",
     "classnames": "^2.5.1",
     "dayjs": "^1.11.12",
     "lodash-es": "^4.17.21",
