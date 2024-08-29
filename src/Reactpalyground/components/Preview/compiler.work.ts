@@ -4,7 +4,7 @@ import { PluginObj } from '@babel/core'
 import { ENTRY_FILE_NAME } from '../../file'
 export const beforeTransformCode = (filename: string, code: string) => {
   let _code = code
-  const regexReact = /import\s+React/g
+  const regexReact = /import\s+Reac/g
   if ((filename.endsWith('.jsx') || filename.endsWith('.tsx')) && !regexReact.test(code)) {
     _code = `import React from 'react';\n${code}`
   }
@@ -94,3 +94,10 @@ export const compile = (files: Files) => {
   const main = files[ENTRY_FILE_NAME]
   return babelTransform(ENTRY_FILE_NAME, main.value, files)
 }
+
+self.addEventListener('message', (data) => {
+  self.postMessage({
+    type: 'COMPILED_CODE',
+    data: compile(data.data)
+  })
+})
