@@ -1,24 +1,18 @@
+import { createPortal } from 'react-dom';
 import './index.css';
-import Calendar from './calendar';
-import { useEffect, useRef } from 'react';
-import { Dayjs } from 'dayjs';
-import ReactPlayground from './Reactpalyground';
-import { PlaygroundContextProvider } from './Reactpalyground/PlaygroundContext';
-interface CalendarRef {
-  setDate: (date: Dayjs) => void
-  getDate: () => Dayjs
-}
+import Space from './Space';
+import { useStore } from './store';
+import Double from './Double';
 function App() {
-
-  const calendarRef = useRef<CalendarRef>(null)
-  useEffect(() => {
-    console.log(calendarRef.current?.getDate().format());
-  }, []);
-  return <PlaygroundContextProvider>
-    <div style={{ width: '100%', height: '100%' }}>
-      <ReactPlayground></ReactPlayground>
-    </div>
-  </PlaygroundContextProvider>
+  const count = useStore((state) => state.count)
+  const increment = useStore((state) => state.increment)
+  console.log(count)
+  return (
+    <>
+      <div id="app" style={{ width: '100%', height: '100%' }}>
+      </div>
+    </>
+  )
 }
 
 export default App;
